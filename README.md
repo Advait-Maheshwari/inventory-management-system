@@ -1,15 +1,32 @@
 # Inventory Management System
 
-A concise full-stack inventory project built with React.js, Bootstrap, Java, Spring Boot, and MySQL.
+A clean full-stack inventory project using React.js, Bootstrap, Java, Spring Boot, and MySQL.
 
-## What is included
+## Zero-cost design
 
-- React frontend with search, create, and status update flows
-- Spring Boot REST API with list, create, update, and delete endpoints
-- MySQL connection settings and schema
-- Clean, minimal code arranged for easy extension
+This project does not use paid APIs or paid cloud services. It runs locally with open-source/free tools only: React.js, Bootstrap, Java, Spring Boot, and MySQL Community Edition.
 
-## Run frontend
+## Project Structure
+
+```text
+03-inventory-management-system/
+  frontend/                 React.js + Bootstrap UI
+    src/
+      api.js                API helper functions
+      App.jsx               Main dashboard screen
+      main.jsx              React entry point
+      styles.css            App styling
+  backend/                  Spring Boot REST API
+    src/main/java/com/excelr/inventorymanagementsystem/
+      config/               Startup seed data
+      controller/           REST endpoints
+      model/                JPA entity
+      repository/           Database access
+      service/              Business logic
+  database/schema.sql       MySQL schema
+```
+
+## Run Frontend
 
 ```bash
 cd frontend
@@ -17,7 +34,7 @@ npm install
 npm run dev
 ```
 
-## Run backend
+## Run Backend
 
 Create the database from `database/schema.sql`, then update the MySQL password in `backend/src/main/resources/application.properties`.
 
@@ -26,4 +43,4 @@ cd backend
 mvn spring-boot:run
 ```
 
-API base: `/api/inventory-management-system/items`
+API: `/api/inventory-management-system/items`
