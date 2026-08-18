@@ -9,9 +9,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DataSeeder {
-  @Bean CommandLineRunner seed(ItemRepository repo) {
+  @Bean
+  CommandLineRunner seed(ItemRepository repo) {
     return args -> {
-      if (repo.count() == 0) List.of(new Item("Laptop Units", "Admin", "Active"), new Item("Barcode Scanners", "Manager", "Review"), new Item("Packing Boxes", "Team", "Planned")).forEach(repo::save);
+      if (repo.count() == 0) {
+        List.of(new Item("Laptop Units", "Admin", "Active"), new Item("Barcode Scanners", "Manager", "Review"), new Item("Packing Boxes", "Team", "Planned")).forEach(repo::save);
+      }
     };
   }
 }
